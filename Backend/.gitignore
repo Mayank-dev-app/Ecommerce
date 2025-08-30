@@ -1,0 +1,5 @@
+# Unnecessary Folder
+node_modules/
+
+# Env File
+.env
