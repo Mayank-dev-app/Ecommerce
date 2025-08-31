@@ -4,11 +4,12 @@ const userContext = createContext();
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
         if (storedUser) {
             try {
-                setUser(storedUser);
+                setUser(JSON.parse(storedUser)); // ✅ parse string to object
             } catch (error) {
                 console.error("Failed to parse user from localStorage:", error);
                 setUser(null);

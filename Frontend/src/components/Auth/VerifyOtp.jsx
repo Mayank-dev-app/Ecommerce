@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../Context/AuthContext";
+const ADDURL = import.meta.env.VITE_Backend_URL;
 
 const VerifyOTP = () => {
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
+  const { user, setUser } = useUser(); 
   const navigate = useNavigate();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/v1/otp-verify", {
+      const res = await fetch(`${ADDURL}/api/v1/otp-verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp })
@@ -16,8 +20,9 @@ const VerifyOTP = () => {
 
       const data = await res.json();
       if (res.ok || data.success) {
-        localStorage.setItem("token", data.token);
-        localstorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+        setUser(data.user);
         alert(data.message || "Otp Verify Successfully");
         navigate("/");
       } else {
@@ -31,7 +36,7 @@ const VerifyOTP = () => {
 
   const handleResend = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/v1/otp-resend", {
+      const res = await fetch(`${ADDURL}/api/v1/otp-resend`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

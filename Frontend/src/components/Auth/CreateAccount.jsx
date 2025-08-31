@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaUser, FaEnvelope, FaLock, FaPhoneAlt, FaHome } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+const ADDURL = import.meta.env.VITE_Backend_URL;
 
 const CreateAccount = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,7 @@ const CreateAccount = () => {
     confirmPassword: "",
   });
   const [submit, Setsubmit] = useState(false);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -25,8 +26,7 @@ const CreateAccount = () => {
     }
     try {
       Setsubmit(true);
-      // calling Api
-      const res = await fetch("http://localhost:5000/api/v1/creat-Account", {
+      const res = await fetch(`${ADDURL}/api/v1/creat-Account`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -41,7 +41,7 @@ const CreateAccount = () => {
         alert(data.message || "Something went wrong!");
       }
     } catch (err) {
-      console.error(err);
+      console.log(err);
       alert("Server error!");
     }
     Setsubmit(false);

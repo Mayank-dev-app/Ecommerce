@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useUser } from "../Context/AuthContext";
+const ADDURL = import.meta.env.VITE_Backend_URL;
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,7 @@ const Login = () => {
     password: "",
   });
   const [submit, setSubmit] = useState(false);
+  const { user, setUser } = useUser();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -17,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       setSubmit(true);
-      const res = await fetch("http://localhost:5000/api/v1/login", {
+      const res = await fetch(`${ADDURL}/api/v1/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -27,10 +30,9 @@ const Login = () => {
 
       if (res.ok && data.verify) {
         localStorage.setItem("token", data.token);
-        localstorage.setItem("user", JSON.stringify(data.user));
-        console.log(data.user);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        setUser(data.user);
         alert(data.message || "Login successful!");
-        console.log("token is: ",localStorage.getItem("token"));
         navigate("/");
       } else if (res.ok && data.otpSent) {
         alert(data.message || "OTP Sent To your Email");

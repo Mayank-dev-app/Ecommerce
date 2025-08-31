@@ -37,7 +37,7 @@ const EmailSender = require("../../Middleware/Email/EmailSender");
       });
     }
 
-    res.status(201).send({
+   return res.status(200).json({
       success: true,
       message: "Data Successylly Save in Database and OTP send at your Email",
     });
