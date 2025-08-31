@@ -14,7 +14,7 @@ import formal2 from "../images/Women/Formal/formal(LeriyaFashion).webp";
 
 import Shoes2 from "../images/Men/Shoes/Shoes(AVANT).webp";
 import Shoes3 from "../images/Men/Shoes/Shoes(BRUTON).webp";
-import Shoes4 from "../images/Men/Shoes/Shoes(BRUTON)1.webp";
+import Shoes4 from "../images/Men/Shoes/Shoes(Bruton)1.webp";
 import Shoes5 from "../images/Men/Shoes/Shoes(Rebok).webp";
 
 export const products = [
