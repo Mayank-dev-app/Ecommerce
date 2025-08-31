@@ -8,7 +8,10 @@ const PORT = 5000;
 // CORS enable
 app.use(
   cors({
-    origin: "http://localhost:5173", // React frontend origin
+    origin: [
+      "http://localhost:5173",
+      "https://playful-selkie-bf284f.netlify.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
