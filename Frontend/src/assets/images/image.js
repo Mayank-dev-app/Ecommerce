@@ -44,7 +44,7 @@ import watch12 from "../images/Women/watch/Watch(Michael Kors).webp";
 import watch13 from "../images/Women/watch/Watch(titan).webp";
 import watch14 from "../images/Women/watch/Watch(Titan)1.webp";
 
-import Frok from "../images/Women/Frok/Frok(AAsk).webp";
+import Frok from "../images/Women/Frok/Frok(AASK).webp";
 import Frok1 from "../images/Women/Frok/Frok(Cotland Fashions).webp";
 import Frok2 from "../images/Women/Frok/Frok(F2W).webp";
 import Frok3 from "../images/Women/Frok/Frok(F2W)1.webp";
