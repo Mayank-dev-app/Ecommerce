@@ -15,7 +15,7 @@ import Shoes from "../images/Men/Shoes/Shoes( Red Cheif).webp";
 import Shoes1 from "../images/Men/Shoes/Shoes(Asian).webp";
 import Shoes2 from "../images/Men/Shoes/Shoes(AVANT).webp";
 import Shoes3 from "../images/Men/Shoes/Shoes(BRUTON).webp";
-import Shoes4 from "../images/Men/Shoes/Shoes(BRUTON)1.webp";
+import Shoes4 from "../images/Men/Shoes/Shoes(Bruton)1.webp";
 import Shoes5 from "../images/Men/Shoes/Shoes(Rebok).webp";
 import shoes from "../images/Women/shoes/shoes(Louis stitch).webp";
 import shoes1 from "../images/Women/shoes/Shoes(Shoetopia).webp";
