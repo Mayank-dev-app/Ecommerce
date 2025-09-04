@@ -1,42 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ProtectedRoute = ({ Component }) => {
   const navigate = useNavigate();
-  const [isAuth, setIsAuth] = useState(true);
-  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
-    let token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     if (!token) {
-      setIsAuth(false);
-      setShowAlert(true);
-
-      // redirect after 2 sec
-      setTimeout(() => {
-        setShowAlert(false);
-        navigate("/");
-      }, 2000);
+      alert("Please sign in to access this page");
+      navigate("/"); // redirect to home/login
     }
-  }, [navigate]);
+  }, [navigate]); // dependency array me function reference
 
-  return (
-    <>
-      {isAuth ? (
-        // ✅ Fade-in animation with Tailwind
-        <div className="animate-fadeIn">
-          <Component />
-        </div>
-      ) : null}
-
-      {/* ✅ Custom smart alert */}
-      {showAlert && (
-        <div className="fixed top-5 right-5 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg animate-slideIn">
-           Please sign in to access this page
-        </div>
-      )}
-    </>
-  );
+  return <>{localStorage.getItem("token") && <Component />}</>;
 };
 
 export default ProtectedRoute;
