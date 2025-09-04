@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16 my-20 px-6 text-center">
+      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16 my-40 px-6 text-center">
         <h1 className="text-4xl font-bold mb-4">About Us</h1>
         <p className="max-w-2xl mx-auto text-lg">
           Welcome to <span className="font-semibold">Imarket</span> — your one-stop destination for trendy fashion, 

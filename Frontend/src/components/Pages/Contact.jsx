@@ -1,7 +1,7 @@
 import {FaAddressBook, FaPhoneAlt, FaEnvelope, FaClock} from "react-icons/fa";
 const Contact = () => {
     return (
-        <div className="w-full my-20">
+        <div className="w-full my-40">
             {/* Hero Section */}
             <div className=" bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16 px-6 text-center">
                 <h1 className="text-4xl font-bold mb-4">Contact Us</h1>

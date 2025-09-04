@@ -19,6 +19,7 @@ app.use(
 
 app.use(express.json());
 app.use("/api/v1/", require("./Routes/User"));
+app.use("/api/v1/", require("./Routes/Product"));
 
 app.get("/", (req,res)=>{
   res.send("Server is running");

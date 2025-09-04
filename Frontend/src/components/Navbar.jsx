@@ -9,6 +9,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useCart } from "./Context/CartApi";
 import { useUser } from "./Context/AuthContext";
 import UserMenu from "./Menu/UserMenu";
+import SearchBar from "./Global/SearchBar";
 
 const Navbar = () => {
   const { cartCount } = useCart();
@@ -24,29 +25,28 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full fixed top-0 z-80 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl shadow-blue-200">
+    <nav className="w-full fixed top-0 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
       <div className="flex items-center justify-between px-4 py-3 md:px-8">
         {/* Logo */}
         <h1 className="text-2xl font-bold font-serif">ImarKet</h1>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 font-semibold">
+        {/* Desktop Links */}
+        <ul className="hidden md:flex gap-6 font-semibold items-center">
           {links.map((link, i) => (
-            <li key={i} className="relative group">
+            <li key={i}>
               <Link
                 to={link.to}
-                className={`flex items-center gap-1 transition-colors duration-300 ${location.pathname === link.to
-                  ? "text-yellow-300"
-                  : "text-white"
-                  }`}
+                className={`flex items-center gap-1 transition-colors duration-300 ${
+                  location.pathname === link.to
+                    ? "text-yellow-300"
+                    : "text-white"
+                }`}
               >
                 {link.label} {link.icon && link.icon}
               </Link>
-
             </li>
           ))}
         </ul>
-
 
         {/* Right Side - Cart & Login */}
         <div className="hidden md:flex items-center gap-6">
@@ -70,7 +70,6 @@ const Navbar = () => {
               Login / Signup
             </Link>
           )}
-
         </div>
 
         {/* Mobile Menu Button */}
@@ -82,15 +81,24 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* SearchBar (Always visible below Navbar) */}
+      <div className="bg-white py-2 px-4 shadow-md">
+        <div className="max-w-3xl mx-auto">
+          <SearchBar />
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col items-center gap-6 py-6 bg-blue-700 text-white">
+        <div className="xl:hidden flex flex-col items-center gap-6 py-6 bg-blue-700 text-white">
           {links.map((link, i) => (
             <Link
               key={i}
               to={link.to}
               onClick={() => setMenuOpen(false)}
-              className={`text-lg ${location.pathname === link.to ? "text-yellow-300" : "text-white"
-                }`}
+              className={`text-lg ${
+                location.pathname === link.to ? "text-yellow-300" : "text-white"
+              }`}
             >
               {link.label}
             </Link>
@@ -118,10 +126,9 @@ const Navbar = () => {
               Login / Signup
             </Link>
           )}
-          
         </div>
       )}
-    </nav >
+    </nav>
   );
 };
 

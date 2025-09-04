@@ -25,7 +25,7 @@ const Hero = () => {
   }, [images.length])
 
   return (
-    <div className="my-20  w-full flex items-center justify-center">
+    <div className="my-40  w-full flex items-center justify-center">
         {/* Left Container */}
       <div className="relative w-[80%] h-[400px]  overflow-hidden  rounded-md shadow-lg">
         {/* Image */}
