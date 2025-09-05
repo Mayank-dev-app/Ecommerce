@@ -26,7 +26,7 @@ const CreateAccount = () => {
     }
     try {
       Setsubmit(true);
-      const res = await fetch(`${ADDURL}/api/v1/creat-Account`, {
+      const res = await fetch(`${ADDURL}/api/v1/create-Account`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
