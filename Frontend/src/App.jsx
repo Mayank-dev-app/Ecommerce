@@ -43,17 +43,13 @@ const App = () => {
         <Route path="/userDashboard" element={<USerDashboard />} />
         <Route element={<Layout />} >
           <Route path="/" element={<Home />} />
-          {/* <Route path="/product" element={<ProtectedRoute Component={Shop} />} />
+          <Route path="/product" element={<ProtectedRoute Component={Shop} />} />
           <Route path="/product/:id" element={<ProtectedRoute Component={ProductDetails} />} />
-          <Route path="/aboutus" element={< ProtectedRoute Component={About} />} /> */}
-          <Route path="/product" element={<Shop />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/aboutus" element={< About />} />
+          <Route path="/aboutus" element={< ProtectedRoute Component={About} />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
 
-        {/* <Route path="/cart" element={< ProtectedRoute Component={Cart} />} /> */}
-        <Route path="/cart" element={< Cart />} />
+        <Route path="/cart" element={< ProtectedRoute Component={Cart} />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/orders" element={<Order />} />
 
