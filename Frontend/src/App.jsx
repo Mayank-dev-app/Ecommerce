@@ -43,13 +43,17 @@ const App = () => {
         <Route path="/userDashboard" element={<USerDashboard />} />
         <Route element={<Layout />} >
           <Route path="/" element={<Home />} />
-          <Route path="/product" element={<ProtectedRoute Component={Shop} />} />
+          {/* <Route path="/product" element={<ProtectedRoute Component={Shop} />} />
           <Route path="/product/:id" element={<ProtectedRoute Component={ProductDetails} />} />
-          <Route path="/aboutus" element={< ProtectedRoute Component={About} />} />
+          <Route path="/aboutus" element={< ProtectedRoute Component={About} />} /> */}
+          <Route path="/product" element={<Shop />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/aboutus" element={< About />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
 
-        <Route path="/cart" element={< ProtectedRoute Component={Cart} />} />
+        {/* <Route path="/cart" element={< ProtectedRoute Component={Cart} />} /> */}
+        <Route path="/cart" element={< Cart />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/orders" element={<Order />} />
 
@@ -63,7 +67,7 @@ const App = () => {
         <Route path="/admin" element={<AdminLayout />} >
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="products" element={< Products />} />
-          <Route path = "add-product" element = {<AddProduct /> } />
+          <Route path="add-product" element={<AddProduct />} />
           <Route path="orders" element={<Orders />} />
           <Route path="users" element={<Users />} />
         </Route>

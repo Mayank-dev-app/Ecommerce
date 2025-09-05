@@ -10,7 +10,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://ecommerce-de3r.vercel.app/",
+      "https://ecommerce-6cax.vercel.app/create-account",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
