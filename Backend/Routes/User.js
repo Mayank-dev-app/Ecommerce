@@ -4,7 +4,7 @@ const { OtpVerification , OtpResend} = require("../Controller/Auth/EmailVerifica
 const { loginUser, logOut } = require("../Controller/Auth/Login");
 const Route = express.Router();
 
-Route.post("/creat-Account", AccountController);
+Route.post("/create-Account", AccountController);
 Route.post("/login", loginUser);
 Route.post("/logout", logOut);
 
