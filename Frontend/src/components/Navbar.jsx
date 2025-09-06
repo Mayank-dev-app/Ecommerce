@@ -64,7 +64,7 @@ const Navbar = () => {
             <UserMenu user={user} setUser={setUser} />
           ) : (
             <Link
-              to="/create-account"
+              to="/api/v1/create-account"
               className="bg-blue-600 px-5 py-2 rounded-2xl shadow-md hover:bg-blue-700 transition duration-300"
             >
               Login / Signup
@@ -120,7 +120,7 @@ const Navbar = () => {
             <UserMenu user={user} setUser={setUser} />
           ) : (
             <Link
-              to="/create-account"
+              to="/api/v1/create-account"
               className="bg-blue-600 px-5 py-2 rounded-2xl shadow-md hover:bg-blue-700 transition duration-300"
             >
               Login / Signup
