@@ -54,10 +54,10 @@ const App = () => {
         <Route path="/orders" element={<Order />} />
 
         {/* Auth Files */}
-        <Route path="/create-account" element={<CreateAccount />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forget-password" element={<ForgetPassword />} />
-        <Route path="/verify-otp" element={<VerifyOTP />} />
+        <Route path="/api/v1/create-account" element={<CreateAccount />} />
+        <Route path="/api/v1/login" element={<Login />} />
+        <Route path="/api/v1/forget-password" element={<ForgetPassword />} />
+        <Route path="/api/v1/verify-otp" element={<VerifyOTP />} />
 
         {/* Admin Pannel */}
         <Route path="/admin" element={<AdminLayout />} >
